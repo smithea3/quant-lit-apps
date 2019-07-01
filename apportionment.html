@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<title>Apportionment Calculator</title>
+
+<body>
+
+  <div class="jumbotron">
+    <h1 class="display-4" style="text-align: center;">Apportionment Calculator</h1>
+    <p class="lead">Quickly and efficiently apportion a given number of items to a given number of groups.</p>
+    <hr class="my-4">
+    <p>Enter the number of "groups" and the number of "items" below, then click <b>"Create the table"</b> to get started.</p>
+
+    <p>
+      Once you have entered the information below and clicked <b>"Create the table"</b>,
+      you will need to change the "Modified Divisors" to correctly apportion the items
+      in the adjusted divisor methods. When the adjusted divisor methods are
+      correctly apportioned, the corresponding "Totals" cell will turn green indicating success.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Number of groups: </span>
+      </div>
+      <input type="number" id="numOfStatesInput" name="numOfStates" value=3 class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Number of items: </span>
+      </div>
+      <input type="number" id="numOfSeatsInput" name="numOfSeats" value=11 class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+        oninput="calculateQuotas(); hamiltonMethod(); jeffersonMethod(); webstersMethod(); adamsMethod(); hhMethod();">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <button class="btn btn-outline-secondary" type="button" id="createTableButton" onclick="generate_table()">Create the table</button>
+        <button disabled="disabled" id="exportTableButton" class="btn btn-outline-secondary" type="button" onclick="TableExport( document.getElementsByTagName('table'), {formats: ['xls'], exportButtons: true,} );">Export table</button>
+        <button class="btn btn-outline-secondary" type="button" onclick="location.reload()">Restart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add in the apportionment code javascript file-->
+  <script src="js/apportionment.js"></script>
+  <!-- jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/TableExport/5.2.0/js/tableexport.min.js"></script>
+</body>
+
+</html>

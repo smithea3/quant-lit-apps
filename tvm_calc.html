@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    button {
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<title>Time Value of Money Calculator</title>
+
+<body>
+
+  <div class="jumbotron">
+    <h1 class="display-4" style="text-align: center;">TVM Calculator</h1>
+    <p class="lead">A time value of money calculator for financial computations.</p>
+    <!--hr class="my-4"-->
+  </div>
+
+  <div id="tvmInputs" class="container form">
+    <div class="row">
+      <!-- PV Input -->
+      <div class="col-sm">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">PV: </span>
+          </div>
+          <input type="number" name="calculatorInput" id="pv" name="tvmInput" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+      </div>
+
+      <!-- PMT Input -->
+      <div class="col-sm">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">PMT: </span>
+          </div>
+          <input type="number" name="calculatorInput" id="pmt" name="tvmInput" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+      </div>
+
+      <!-- Rate Input -->
+      <div class="col-sm">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Rate: </span>
+          </div>
+          <input type="number" name="calculatorInput" id="rate" name="tvmInput" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!--  FV Input -->
+      <div class="col-sm">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">FV: </span>
+          </div>
+          <input type="number" name="calculatorInput" id="fv" name="tvmInput" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+      </div>
+
+      <!-- Years Input -->
+      <div class="col-sm">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Years: </span>
+          </div>
+          <input name="calculatorInput" type="number" id="years" name="tvmInput" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+      </div>
+
+      <!-- Compounds Input -->
+      <div class="col-sm">
+        <div class="input-group mb-3">
+          <select class="custom-select" id="compoundPeriods">
+            <option value="-1" selected>Compounds</option>
+            <option value="1">Annually</option>
+            <option value="2">Bi-annually</option>
+            <option value="4">Quarterly</option>
+            <option value="6">Bi-monthly</option>
+            <option value="12">Monthly</option>
+            <option value="52">Weekly</option>
+            <option value="365">Daily</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container" style="text-align: center">
+    <button type="button" name="calculateButton" id="pvButton" class="btn" onclick="calculatePV();">PV</button>
+    <button type="button" name="calculateButton" id="pmtButton" class="btn" onclick="calculatePMT();">PMT</button>
+    <button type="button" disabled="disabled" name="calculateButton" id="rateButton" class="btn" onclick="calculateRate();">Rate</button>
+    <button type="button" name="calculateButton" id="fvButton" class="btn" onclick="calculateFV();">FV</button>
+    <button type="button" disabled="disabled" name="calculateButton" id="yearsButton" class="btn">Years</button>
+  </div>
+
+  <!-- Add in the apportionment code javascript file-->
+  <script src="js/tvm.js"></script>
+  <!-- jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <!-- Latest compiled JavaScript -->
+</body>
+
+</html>

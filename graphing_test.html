@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<div class="jumbotron">
+  <h1 class="display-4" style="text-align: center;">Plotly.js Sandbox</h1>
+  <p class="lead">Not intended for public release.</p>
+  <hr class="my-4">
+  <p>This page is not intended to be used other than for testing purposes.</p>
+  <p>Testing out \(\LaTeX\).</p>
+</div>
+
+<body>
+  <div class="container" id="myDiv"></div>
+  <script type="text/javascript">
+    var trace1 = {
+      x: [1, 2, 3, 4, 5],
+      y: [10, 15, 13, 17, 20],
+      type: 'scatter',
+    };
+
+    var trace2 = {
+      x: [1, 2, 3, 4, 5],
+      y: [16, 5, 11, 9, 20],
+      type: 'scatter',
+      name: '\(\alpha_{1c} = 352 \pm 11 \text{ km s}^{-1}\)'
+    };
+
+    var data = [trace1, trace2];
+
+    Plotly.newPlot('myDiv', data, {}, {
+      showSendToCloud: true
+    });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</body>
+
+</html>
